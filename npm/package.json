@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksy8230/nodejs.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "KSY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksy8230/nodejs/issues"
+  },
+  "homepage": "https://github.com/ksy8230/nodejs#readme"
+}
