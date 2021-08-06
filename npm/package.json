@@ -4,7 +4,7 @@
   "description": "test project",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
+    "start": "nodemon app",
     "test": "node app"
   },
   "repository": {
@@ -20,5 +20,8 @@
     "url": "https://github.com/ksy8230/nodejs/issues"
   },
   "homepage": "https://github.com/ksy8230/nodejs#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
