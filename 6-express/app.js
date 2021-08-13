@@ -1,6 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 import fsAsync from 'fs/promises';
+import 'express-async-errors';
 
 const app = express();
 
@@ -40,23 +41,17 @@ app.get('/file1', (req, res, next) => {
     }
 });
 
-// promise
-app.get('/file2', (req, res) => {
-    fsAsync
+// 비동기 promise
+app.get('/file2', async (req, res) => {
+    return fsAsync
     .readFile('/file2.txt')
-    .then((data) => res.send(data))
-    .catch((err) => res.sendStatus(404));
+    .then((data) => res.send(data));
 });
 
-// await
+// 비동기 await
 app.get('/file3', async (req, res) => {
-    try {
-        const data = await fsAsync.readFile('/file3.txt');
-        res.send(data);
-    }
-     catch (error) {
-        res.sendStatus(404);
-     }
+    const data = await fsAsync.readFile('/file3.txt');
+    res.send(data);
 });
 
 app.post('/', (req, res, next) => {
