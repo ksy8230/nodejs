@@ -1,4 +1,7 @@
 import express from 'express';
+import fs from 'fs';
+import fsAsync from 'fs/promises';
+
 const app = express();
 
 app.all('/api/*', (req, res, next) => {
@@ -27,8 +30,33 @@ app.get('/',
     },
 );
 
-app.get('/', (req, res, next) => {
-    console.log('second');
+// 동기 처리
+app.get('/file1', (req, res, next) => {
+    try {
+        const data = fs.readFileSync('/file.txt');
+        res.send(data);
+    } catch (e) {
+        res.sendStatus(404);
+    }
+});
+
+// promise
+app.get('/file2', (req, res) => {
+    fsAsync
+    .readFile('/file2.txt')
+    .then((data) => res.send(data))
+    .catch((err) => res.sendStatus(404));
+});
+
+// await
+app.get('/file3', async (req, res) => {
+    try {
+        const data = await fsAsync.readFile('/file3.txt');
+        res.send(data);
+    }
+     catch (error) {
+        res.sendStatus(404);
+     }
 });
 
 app.post('/', (req, res, next) => {
@@ -40,7 +68,7 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-    res.status(500).send('Sorry, try later!'); // 에러처리
+    res.status(500).json({ message: 'Something went wrong!' }); // 에러처리
 });
 
 app.listen(8080, () => {
