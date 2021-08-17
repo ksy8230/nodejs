@@ -43,9 +43,11 @@ const server = http.createServer((req, res) => {
         }
 
     } 
-        
-    
-    // res.end(); -> pipe는 비동기 처리를 하므로 여기에 end를 호출하면 res가 불러와지기 전에 end가 호출되어버린다
+
 });
 
 server.listen(8080);
+
+/**
+ * 😶단점 : 코드가 지저분하다, 데이터가 비영구적이다
+ */
