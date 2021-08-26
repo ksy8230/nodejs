@@ -14,3 +14,9 @@
 ### API 디자인하기
 
 -   [트위터 API](https://www.notion.so/REST-API-109e7cd8c41b4588bbf62f5fc2b284e9, '노션 링크')
+
+### API 포스트맨 컬렉션에서 빠르게 API 호출 테스트 가능
+
+### API 서버 -> MVC 패턴으로 리팩토링
+
+-   data 층은 데이터의 모양을 어떻게 리턴할지 중점으로 잡아 코드 짜기
