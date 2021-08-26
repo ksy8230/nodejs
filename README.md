@@ -1,3 +1,9 @@
+## branch별 용도
+
+-   version/nodejs : 강의 내용
+-   version/nodejs-api : nodejs, express로 api 작성
+-   version/phython : phython으로 api 작성 (예정)
+
 ## node에서 js가 제공하는 최신 모듈 사용법
 
 -   package.json에서 type 지정을 module로 설정
