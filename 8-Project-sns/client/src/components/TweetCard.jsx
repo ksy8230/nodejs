@@ -5,14 +5,14 @@ import EditTweetForm from './EditTweetForm';
 
 const TweetCard = memo(
   ({ tweet, owner, onDelete, onUpdate, onUsernameClick }) => {
-    const { id, username, name, url, text, createdAt } = tweet;
+    const { id, username, name, url, text, registered_dttm } = tweet;
     const [editing, setEditing] = useState(false);
     const onClose = () => setEditing(false);
 
     return (
       <li className='tweet'>
         <section className='tweet-container'>
-          <Avatar url={url} name={name} />
+          <Avatar url={url} name={username} />
           <div className='tweet-body'>
             <span className='tweet-name'>{name}</span>
             <span
@@ -21,7 +21,7 @@ const TweetCard = memo(
             >
               @{username}
             </span>
-            <span className='tweet-date'> · {parseDate(createdAt)}</span>
+            <span className='tweet-date'> · {parseDate(registered_dttm)}</span>
             <p>{text}</p>
             {editing && (
               <EditTweetForm
