@@ -40,3 +40,12 @@
 -   장고 프로젝트 만들기 ` > django-admin startproject (프로젝트이름)`
 -   장고 프로젝트의 앱 만들기 ` > django-admin startapp (앱이름)`
 -   python_api (프로젝트) > sns (앱들)
+
+3. 모델 생성
+
+-   앱 폴더 내 모델 파일 작성 후 명령어 실행하면 디비 생성 완료
+-   `python manage.py makemigrations`
+-   `python manage.py migrate`
+-   관리자 유저 생성 후 서버 실행
+-   `python manage.py createsuperuser`
+-   `python manage.py runserver`

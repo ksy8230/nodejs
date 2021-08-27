@@ -9,5 +9,10 @@ class Sns(models.Model):
     registered_dttm = models.DateTimeField(
         auto_now_add=True, verbose_name='등록시간')
 
+    def __str__(self):
+        return self.username
+
     class Meta:
         db_table = 'pythonapi_sns'
+        verbose_name = 'sns 게시글'
+        verbose_name_plural = 'sns 게시글'
