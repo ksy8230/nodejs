@@ -1,0 +1,14 @@
+# created by virtualenv automatically
+# *
+__pycache__/
+migrations
+templates
+*.exe
+*.bat
+Lib
+activate*
+__init__*
+# *.py[cod]
+# *$py.class
+*.cfg
+*.sqlite3

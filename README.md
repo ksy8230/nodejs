@@ -43,9 +43,18 @@
 
 3. 모델 생성
 
--   앱 폴더 내 모델 파일 작성 후 명령어 실행하면 디비 생성 완료
+-   앱 폴더 내 모델 파일 작성 후 마이그레이션하면 디비 생성 완료
 -   `python manage.py makemigrations`
 -   `python manage.py migrate`
 -   관리자 유저 생성 후 서버 실행
 -   `python manage.py createsuperuser`
 -   `python manage.py runserver`
+
+4. Queryset을 Nested한 JSON으로 매핑하는 과정
+
+-   serializers
+    \*\*
+
+### ORM (Object Relational Mapping)
+
+-   ORM 프레임워크를 사용하면 프레임워크에서 만든 모델 파일이 자동적으로 디비에서 모델을 생성한다. (디비에서 데이터 명시, 프레임워크에서 데이터 파일 명시할 필요가 없어진다)

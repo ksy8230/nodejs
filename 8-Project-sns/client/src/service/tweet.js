@@ -16,7 +16,7 @@ export default class TweetService {
 
     async getTweets(username) {
         const query = username ? `?username=${username}` : '';
-        const response = await fetch(`${this.baseURL}/tweets${query}`, {
+        const response = await fetch(`${this.baseURL}/snss${query}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
