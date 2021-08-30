@@ -19,7 +19,7 @@
 
 ### API 디자인하기
 
--   [트위터 API](https://www.notion.so/REST-API-109e7cd8c41b4588bbf62f5fc2b284e9, '노션 링크')
+-   [트위터 API](https://protective-cairnsmore-536.notion.site/REST-API-109e7cd8c41b4588bbf62f5fc2b284e9, '노션 링크')
 
 ### API 포스트맨 컬렉션에서 빠르게 API 호출 테스트 가능
 
@@ -35,3 +35,8 @@
 -   서버에서 유효성 검사하는 이유
     -> 디비에 접근해서 읽고 쓰기 전에 데이터가 유효한지 검사함으로서 서버 비용 절약  
     -> 데이터를 일관성있게 보관 가능
+
+### 인증 방식으로 JWT 사용 이유
+
+-   서버가 다양한 클라언트를 상대하는 Restful API이기 때문에
+-   서버 확장성을 위해 (여러 서버 사용시 유용)

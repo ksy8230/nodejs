@@ -8,7 +8,7 @@ const token = jwt.sign(
     },
     secret,
     {
-        expiresIn: 2,
+        expiresIn: 5,
     },
 );
 
