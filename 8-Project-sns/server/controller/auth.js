@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import {} from 'express-async-errors';
 import * as userRepository from '../data/auth.js';
 
-const jwtSecretKey =
+export const jwtSecretKey =
     'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYzMDkzNzA1OSwiaWF0IjoxNjMwOTM3MDU5fQ.2snxur642V3WvJq4RTqUNyaE1Tm0VTd_uakDX7leOLo';
 const jwtExpiredsInDays = '2d';
 const bcryptSaltRounds = 12;
@@ -37,10 +37,19 @@ export async function login(req, res) {
     if (!isValidPassword) {
         return res.status(401).json({message: 'Invalid user or password'});
     }
+    // 유효한 정보라면 jwt토큰을 생성
     const token = createJwtToken(user.id);
     res.status(200).json({token, username});
 }
 
 function createJwtToken(id) {
     return jwt.sign({id}, jwtSecretKey, {expiresIn: jwtExpiredsInDays});
+}
+
+export async function me(req, res, next) {
+    const user = await userRepository.findById(req.userId);
+    if (!user) {
+        return res.status(404).json({message: 'User no found!'});
+    }
+    res.status(200).json({token: req.token, username: user.username});
 }

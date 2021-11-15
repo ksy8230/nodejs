@@ -2,7 +2,7 @@ let tweets = [
     {
         id: '1',
         text: '화이팅',
-        createdAt: Date.now().toString,
+        createdAt: Date.toString,
         name: 'Bob',
         username: 'bob',
         url: '',
@@ -10,7 +10,7 @@ let tweets = [
     {
         id: '2',
         text: '화이팅?',
-        createdAt: Date.now().toString,
+        createdAt: Date.toString,
         name: 'kimsuyoung',
         username: 'sykim',
         url: '',
